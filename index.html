@@ -1,9 +1,107 @@
-<html>
- 
-<body>
-  <h1>Rian</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rian's Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./all.min.css" />
+  </head>
+  <body>
+    <nav>
+      <h2 id="logo">Rian Rhoades</h2>
+      <ul class="navigation-items">
+        <li class="navigation-item"><a href="#about-me">About Me</a></li>
+        <li class="navigation-item"><a href="#projects">Projects</a></li>
+        <li class="navigation-item"><a href="#skills">Skills</a></li>
+        <li class="navigation-item"><a href="mailto:rianrhoades@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-container">
+            <h2>About Me</h2>
+            <p>
+              Hi! I'm Rian, a graduate student at Ewha Woman's University. 
+              I'm passionate about user design and am gearing up to study
+              Front End Development and UX design. Have a click around!
+            </p>
+            <p>
+              I am originally from Indiana, where I first gained an interest
+              in coding through lessons on Codecademy!
+            </p>
+            <p>
+              In my free time I like to play Pokemon, crochet,
+              and travel!
+            </p>
+            <p>
+              Fun fact! I've been programing for
+              <span id="time-container">0</span> seconds!
+            </p>
+          </div>
+          <img
+            src="https://scontent.ficn1-1.fna.fbcdn.net/v/t39.30808-6/233616732_4729287207105424_5195399003802173832_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=oxvHmFpyRa0AX-vPiLV&_nc_ht=scontent.ficn1-1.fna&oh=00_AfCRYAauIgcPEQ79DR6qRMW9ggIQbEH384heC1fJE3HGbQ&oe=64928CF2"
+            alt="A photo of Rian"
+            class="portrait"
+          />
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Neocities</h3>
+          </summary>
+          <a href="https://bluelune.neocities.org"><img
+            src="https://i.pinimg.com/564x/6d/f1/a5/6df1a5721d94a9a7267538534b369a97.jpg"
+            alt="Opening Image of Neocities"
+            class="project-image"
+          /></a>
+          <p class="project-description">
+            A social media site where you can learn more about me!
+          </p>
+        </details>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container">
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-aws"></i>
+          <i class="fab fa-sketch"></i>
+          <i class="fab fa-figma"></i>
+          <i class="fab fa-git"></i>
+          <i class="fab fa-chrome"></i>
+          <i class="fas fa-terminal"></i>
+          <i class="fas fa-universal-access"></i>
+          <i class="fab fa-npm"></i>
+          <i class="fab fa-node"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </section>
+    </main>
+
+    <footer>Made with <span class="heart">♥</span> in Seoul</footer>
+  </body>
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "05-23-2023";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
 </html>
